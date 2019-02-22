@@ -1,0 +1,8 @@
+###1
+14 14 14 2 5 /bin/bash /home/kyielas/soal1.sh
+
+###4
+0 * * * * /bin/bash /home/kyielas/soal4.sh
+
+###5
+2-30/6 * * * * /bin/bash /home/kyielas/soal5.sh
