@@ -74,7 +74,7 @@ sebagai berikut:
 * Password yang dihasilkan tidak boleh sama.
 
 ### Jawab
-Saya menggunakan satu script untuk memenuhi semua kriteria
+Saya menggunakan satu script untuk memenuhi semua kriteria pembuatan password generator dengan
 **a.** untuk memenuhi password pertama ialah password1.txt ialah dengan memberi variabel tersebut dengan 1 (x=1)
 > if [ -f /home/kyielas/Password/pass$x.txt ]
 **b. & c.** untuk memenuhi password baru akan di simpan dalam passwordx+1.txt maka otomatis mengecek tiap angka dan apabila terlewat 
@@ -96,7 +96,7 @@ bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (string
 manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai
 berikut:
 
-* Huruf b adalah alfabet kedua, sedangkan saat ini waktu menunjukkan
+* Huruf b adalah alfabet kedua, sedangkan saat ini wanunjukkan
   pukul 12, sehingga huruf b diganti dengan huruf alfabet yang memiliki
   urutan ke 12+2 = 14.
 * Hasilnya huruf b menjadi huruf n karena huruf n adalah huruf ke
@@ -106,6 +106,22 @@ berikut:
 * dan buatkan juga bash script untuk dekripsinya.
 
 ### Jawab
+Teknis pengerjaan nomor ini analoginya seperti konsep caesar code menenkripsi file syslog dengan kode jam
+
+**a. & b.** untuk memenuhi hurufnya diubah menjadi huruf awal ditambah jam sekarang saya membuat variabel yang berisi 
+        dengan variabel x=date +"%H"
+> tr "${upperU:0:26}" "${upperU:${x}:26}"
+
+yaitu mengenkripsi huruf sekarang ditambah huruf yang ditambah jam 
+
+**c.** untuk memenuhi hal tersebut dibuat sebuah variabel lagi yang berisi perulangan dari string huruf
+> eupper=($(echo ${upperU[@]})$(echo ${upperU[@]})
+
+**d.** dengan bantuan crontab dibuat sebuah command yang akan membackup file syslog setiap jam
+> 0 * * * * /bin/bash /home/kyielas/soal4.sh
+
+**e.** dibuat file baru yang ditambah variabel sbg berikut
+> jam=${dekrip:0:2}
 
 ## Soal No. 5
 Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi
