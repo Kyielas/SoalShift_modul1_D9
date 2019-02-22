@@ -121,12 +121,15 @@ kriteria berikut:
 * Jalankan script tadi setiap 6 menit dari menit ke 2 hingga 30, contoh
   13:02, 13:08, 13:14, dst.
   
-  ### Jawab
-  **a.** untuk memenuhi mengandung string "cron" (Tidak Case-sensitive) dan tidak mengandung string sudo ditambah kondisi sbg berikut
-  > (/cron/ || /CRON/) && (!/sudo/)
-  **b.** untuk memenuhi jumlah field kurang dari 13 maka ditambah kondisi sbg berikut
-  > (NF < 13)
-  **c.** untuk disimpan direktori /home/user/modul1 ditambah kondisi sbg berikut
-  > >> /home/kyielas/modul1/kyielas.log
-  **d.** untuk mengeksekusi script setiap 6 menit dari menit 2 sampai 30 diberi kondisi dengan bantuan crontab sbg berikut
-  > 2-30/6 * * * * /bin/bash /home/kyielas/soal5.sh
+### Jawab
+**a.** untuk memenuhi mengandung string "cron" (Tidak Case-sensitive) dan tidak mengandung string sudo ditambah kondisi sbg berikut
+* (/cron/ || /CRON/) && (!/sudo/)
+  
+**b.** untuk memenuhi jumlah field kurang dari 13 maka ditambah kondisi sbg berikut
+* (NF < 13)
+   
+**c.** untuk disimpan direktori /home/user/modul1 ditambah kondisi sbg berikut
+* /home/kyielas/modul1/kyielas.log
+  
+**d.** untuk mengeksekusi script setiap 6 menit dari menit 2 sampai 30 diberi kondisi dengan bantuan crontab sbg berikut
+* 2-30/6 * * * * /bin/bash /home/kyielas/soal5.sh
